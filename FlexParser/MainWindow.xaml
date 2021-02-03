@@ -1,0 +1,71 @@
+﻿<Window x:Class="FlexParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlexParser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="700" MinHeight="450" MinWidth="700">
+    <Grid Background="Silver">
+        <!-- Grid defenition -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Controls -->
+        <TextBlock Grid.Column="0"
+                   Margin="25 5 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Text="FlexParser"
+                   FontSize="20">
+        </TextBlock>
+        <TextBox Grid.Column="0"
+                 Height="20"
+                 Margin="30 40 110 0"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Top">
+        </TextBox>
+        <Button Grid.Column="0"
+                Width="70"
+                Height="20"
+                Margin="0 40 30 0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content="Parse"
+                Click="ParseButton">
+        </Button>
+        <ComboBox Grid.Column="0"
+                  Width="140"
+                  Margin="30 65 0 0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+            <TextBlock>РИА Новости</TextBlock>
+        </ComboBox>
+        <xctk:IntegerUpDown Grid.Column="0"
+                            Width="50"
+                            Height="22"
+                            Margin="180 65 0 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Value="0"
+                            Minimum="0">
+        </xctk:IntegerUpDown>
+        <xctk:IntegerUpDown Grid.Column="0"
+                            Width="50"
+                            Height="22"
+                            Margin="240 65 0 0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Value="0"
+                            Minimum="0">
+        </xctk:IntegerUpDown>
+        <TextBlock Grid.Column="0"
+                   Margin="30 95 30 30"
+                   Background="White"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch">
+        </TextBlock>
+    </Grid>
+</Window>
