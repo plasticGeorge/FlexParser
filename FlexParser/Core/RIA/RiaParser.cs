@@ -5,7 +5,7 @@ using FlexParser.Classes;
 
 namespace FlexParser.RIA
 {
-    public class RiaParser : IParser<string[]>
+    public class RiaParser
     {
         public string[] parseSource(IHtmlDocument document)
         {

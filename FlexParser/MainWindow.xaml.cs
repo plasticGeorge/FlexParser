@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace FlexParser
 {
@@ -10,11 +11,6 @@ namespace FlexParser
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void ParseButton(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

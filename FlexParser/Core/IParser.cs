@@ -1,9 +1,7 @@
-﻿using AngleSharp.Html.Dom;
-
-namespace FlexParser.Classes
+﻿namespace FlexParser.Classes
 {
-    public interface IParser<T> where T : class
+    public interface IParser
     {
-        T parseSource(IHtmlDocument document);
+        
     }
 }
