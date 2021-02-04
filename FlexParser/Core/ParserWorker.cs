@@ -118,11 +118,15 @@ namespace FlexParser.Classes
 
         #region Methods
 
-        string[] Parse()
+        string[] Parse(IParser parser, IParserSettings parserSettings)
         {
             string[] result = null;
             
-            //Strart point!
+            //"HtmlLoader" gets the source of the resource in the form of a document using the "ParserSettings"
+            
+            //The "Parse" function from the "Parser" class of the specified resource gets the result and returns it
+            
+            //Bravo!!!
             
             return result;
         }
