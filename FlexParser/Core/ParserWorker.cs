@@ -128,11 +128,9 @@ namespace FlexParser.Classes
             
             //Bravo!!!
             
-            //I lost a day((
-            
             return result;
         }
 
         #endregion
     }
-}
+} 

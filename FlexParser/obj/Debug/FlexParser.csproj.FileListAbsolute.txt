@@ -133,3 +133,4 @@ C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.csproj.
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.csproj.CopyComplete
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.exe
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.pdb
+C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\GeneratedInternalTypeHelper.g.cs
