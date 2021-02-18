@@ -86,12 +86,14 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="Core\DelegateCommand.cs" />
-        <Compile Include="Core\IParser.cs" />
-        <Compile Include="Core\IParserSettings.cs" />
+        <Compile Include="Core\Interfaces\IParser.cs" />
         <Compile Include="Core\FlexWorker.cs" />
-        <Compile Include="Core\RIA\RiaParser.cs" />
-        <Compile Include="Core\RIA\RiaSettings.cs" />
+        <Compile Include="Core\Interfaces\IParserSettings.cs" />
+        <Compile Include="Core\Parsers\RIA\RiaParser.cs" />
+        <Compile Include="Core\Parsers\RIA\RiaSettings.cs" />
+        <Compile Include="Core\SupportingClasses\DelegateCommand.cs" />
+        <Compile Include="Core\SupportingClasses\HtmlLoader.cs" />
+        <Compile Include="Core\SupportingClasses\ParsedInfo.cs" />
         <Compile Include="MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
@@ -120,6 +122,9 @@
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Core\Parsers" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,5 @@
-﻿using System.Windows;
-using System.Windows.Input;
-using FlexParser.Classes;
+﻿using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace FlexParser
 {
@@ -12,6 +11,12 @@ namespace FlexParser
         public MainWindow()
         {
             InitializeComponent();
+        }
+        
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

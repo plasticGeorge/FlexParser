@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -14,9 +15,10 @@ namespace FlexParser.Classes
         
         private string _SearchString = "";
         private int _Resource;
+        private int _Category;
         private DateTime _StartDate = DateTime.Today;
         private DateTime _EndDate = DateTime.Today;
-        private string[] _TextBlockContent;
+        private ObservableCollection<ParsedInfo> _TextBlockContent;
         
         #endregion
 
@@ -32,12 +34,14 @@ namespace FlexParser.Classes
         #endregion
 
         #region Properties
+        
+        //Base properties
         public IParser Parser { get; set; }
         public IParserSettings ParserSettings { get; set; }
+        public HtmlLoader Loader { get; set; } = new HtmlLoader();
         public HtmlParser HtmlParser { get; set; } = new HtmlParser();
 
         //Properties that notify about changes
-
         public string SearchString
         {
             get
@@ -59,6 +63,18 @@ namespace FlexParser.Classes
             set
             {
                 _Resource = value;
+                OnProperyChanged();
+            }
+        }
+        public int Category
+        {
+            get
+            {
+                return _Category;
+            }
+            set
+            {
+                _Category = value;
                 OnProperyChanged();
             }
         }
@@ -86,7 +102,7 @@ namespace FlexParser.Classes
                 OnProperyChanged();
             }
         }
-        public string[] TextBlockContent
+        public ObservableCollection<ParsedInfo> TextBlockContent
         {
             get
             {
@@ -99,14 +115,16 @@ namespace FlexParser.Classes
             }
         }
 
+        //Command properties
         public ICommand AddFunction
         {
             get
             {
                 return new DelegateCommand((obj) =>
                 {
+                    SetParser();
                     Parse();
-                });
+                }, (obj) => Resource >= 0);
             }
         }
         #endregion
@@ -122,11 +140,35 @@ namespace FlexParser.Classes
                     ParserSettings = new RiaSettings();
                     break;
                 default:
-                    throw new Exception();
+                    MessageBox.Show("Error 4");
                     break;
             }
 
-            ParserSettings.Category = "";
+            switch (Category)
+            {
+                case 0:
+                    ParserSettings.Category = "politics";
+                    break;
+                case 1:
+                    ParserSettings.Category = "world";
+                    break;
+                case 2:
+                    ParserSettings.Category = "economy";
+                    break;
+                case 3:
+                    ParserSettings.Category = "society";
+                    break;
+                case 4:
+                    ParserSettings.Category = "incidents";
+                    break;
+                case 5:
+                    ParserSettings.Category = "incidents";
+                    break;
+                default:
+                    ParserSettings.Category = "";
+                    break;
+            }
+
             ParserSettings.StartDate = StartDate;
             ParserSettings.EndDate = EndDate;
             ParserSettings.SearchString = SearchString;
@@ -135,12 +177,13 @@ namespace FlexParser.Classes
         {
             if (Parser == null || ParserSettings == null)
             {
-                //LoL -*-___-*-
+                MessageBox.Show("Error 1");
+                return;
             }
 
-            string source = Parser.HtmlLoad();
+            string source = await Loader.HtmlLoad(ParserSettings);
             var document = HtmlParser.ParseDocument(source);
-            string[] result = Parser.Parse(document);
+            ObservableCollection<ParsedInfo> result = Parser.Parse(document, ParserSettings.SearchString);
 
             TextBlockContent = result;
         }
