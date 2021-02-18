@@ -14,8 +14,8 @@ namespace FlexParser.Classes
         #region PrivateFields
         
         private string _SearchString = "";
-        private int _Resource;
-        private int _Category;
+        private int _Resource = 0;
+        private int _Category = 0;
         private DateTime _StartDate = DateTime.Today;
         private DateTime _EndDate = DateTime.Today;
         private ObservableCollection<ParsedInfo> _TextBlockContent;

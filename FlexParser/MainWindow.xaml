@@ -56,7 +56,7 @@
                   Margin="85 65 0 0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  SelectedIndex="{Binding Path=Resource, Mode=OneWayToSource}">
+                  SelectedIndex="{Binding Path=Resource, Mode=TwoWay}">
             <TextBlock>РИА Новости</TextBlock>
         </ComboBox>
         <TextBlock Grid.Column="0"
@@ -71,7 +71,7 @@
                   Margin="290 65 0 0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  SelectedIndex="{Binding Path=Category, Mode=OneWayToSource}">
+                  SelectedIndex="{Binding Path=Category, Mode=TwoWay}">
             <TextBlock>Политика</TextBlock>
             <TextBlock>В мире</TextBlock>
             <TextBlock>Экономика</TextBlock>
