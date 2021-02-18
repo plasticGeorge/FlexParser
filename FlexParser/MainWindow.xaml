@@ -5,12 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlexParser"
-        xmlns:vm="clr-namespace:FlexParser.Classes"
+        xmlns:classes="clr-namespace:FlexParser.Classes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="700" MinHeight="450" MinWidth="700">
-    
     <Window.DataContext>
-        <vm:ParserWorker />
+        <classes:FlexWorker />
     </Window.DataContext>
     
     <Grid Background="Silver">
@@ -32,7 +31,8 @@
                  Margin="30 36 110 0"
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Top"
-                 FontSize="15">
+                 FontSize="15"
+                 Text="{Binding SearchString, Mode=OneWayToSource}">
         </TextBox>
         <Button Grid.Column="0"
                 Width="70"
@@ -41,7 +41,8 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Content="Parse"
-                FontSize="13">
+                FontSize="13"
+                Command="{Binding Path=AddFunction}">
         </Button>
         <TextBlock Grid.Column="0"
                    Margin="30 67 0 0"
@@ -55,7 +56,8 @@
                   Margin="85 65 0 0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top"
-                  Text="Hello Привет">
+                  Text="Hello Привет"
+                  SelectedIndex="{Binding Path=Resource, Mode=OneWayToSource}">
             <TextBlock>РИА Новости</TextBlock>
         </ComboBox>
         <TextBlock Grid.Column="0"
@@ -71,7 +73,8 @@
                     Margin="305 65 0 0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Focusable="False">
+                    Focusable="False"
+                    SelectedDate="{Binding Path=StartDate, Mode=TwoWay}">
         </DatePicker>
         <TextBlock Grid.Column="0"
                    Margin="430 67 0 0"
@@ -86,14 +89,20 @@
                     Margin="485 65 0 0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Focusable="False">
+                    Focusable="False"
+                    SelectedDate="{Binding Path=EndDate, Mode=TwoWay}">
         </DatePicker>
-        <TextBlock Grid.Column="0"
+        <ListBox Grid.Column="0"
                    Margin="30 95 30 30"
                    Background="White"
                    HorizontalAlignment="Stretch"
                    VerticalAlignment="Stretch"
-                   Text="{Binding Result}">
-        </TextBlock>
+                   ItemsSource="{Binding Path=TextBlockContent, Mode=OneWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

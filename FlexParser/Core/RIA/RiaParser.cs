@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using AngleSharp.Html.Dom;
+using AngleSharp.Html.Parser;
 using FlexParser.Classes;
 
 namespace FlexParser.RIA
 {
-    public class RiaParser
+    public class RiaParser : IParser
     {
-        public string[] parseSource(IHtmlDocument document)
+        public string HtmlLoad()
         {
+            
+            
+            return null;
+        }
+        
+        public string[] Parse(IHtmlDocument document)
+        {
+
             if (document == null)
             {
                 //Change text from main TextBlock to "Error! Source not specified..."

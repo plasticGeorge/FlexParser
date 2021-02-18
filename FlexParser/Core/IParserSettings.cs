@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 
 namespace FlexParser.Classes
 {
@@ -9,10 +8,10 @@ namespace FlexParser.Classes
         
         string Category { get; set; }
         
+        string SearchString { get; set; }
+        
         DateTime StartDate { get; set; }
         
         DateTime EndDate { get; set; }
-
-        string getNextPagesUri(string response);
     }
 }

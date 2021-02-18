@@ -121,11 +121,9 @@ C:\Users\floppy\RiderProjects\FlexParser\FlexParser\bin\Debug\sv\Xceed.Wpf.Avalo
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.csprojAssemblyReference.cache
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.exe.config
-C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\MainWindow.g.cs
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\App.g.cs
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser_MarkupCompile.cache
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser_MarkupCompile.lref
-C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\MainWindow.baml
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.g.resources
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.Properties.Resources.resources
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.csproj.GenerateResource.cache
@@ -134,3 +132,5 @@ C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.csproj.
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.exe
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\FlexParser.pdb
 C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\MainWindow.g.cs
+C:\Users\floppy\RiderProjects\FlexParser\FlexParser\obj\Debug\MainWindow.baml

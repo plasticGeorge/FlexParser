@@ -1,25 +1,17 @@
-﻿using FlexParser.Classes;
+﻿using System;
+using FlexParser.Classes;
 
 namespace FlexParser.RIA
 {
-    public class RiaSettings
+    public class RiaSettings : IParserSettings
     {
-        RiaSettings(string searchString,
-            string section)
-        {
-            SearchString = searchString;
-            Section = section;
-        }
-        
-        public string SearchString { get; set; }
         public string BaseUri { get; set; } = "https://ria.ru/";
 
-        public string Section { get; set; }
+        public string Category { get; set; }
+        public string SearchString { get; set; }
 
-        public string Prefix { get; set; } = null;
+        public DateTime StartDate { get; set; }
 
-        public int StartPoint { get; set; } = -1;
-
-        public int EndPoint { get; set; } = -1;
+        public DateTime EndDate { get; set; }
     }
 }
